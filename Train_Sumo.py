@@ -81,6 +81,7 @@ for episode in range(NUM_EPISODES):
     print(f"Actor Loss: {result['actor_loss']:.4f} | Critic Loss: {result['critic_loss']:.4f}")
 
     episode_rewards.append(total_reward)
-
+# Save the trained brain!
+torch.save(agent.actor.state_dict(), "trained_actor.pth")
 env.close()
 print("\nTraining Complete! Check the outputs folder for CSV data.")
